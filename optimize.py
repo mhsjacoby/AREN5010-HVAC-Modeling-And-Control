@@ -1,3 +1,6 @@
+# Used in Task 2 for optimizing
+# Code originally from Yangyang Fu
+
 # -*- coding: utf-8 -*-
 """
 This module compiles the defined test case model into an FMU using the

@@ -1,3 +1,6 @@
+# Used in Tasks 1, 2 for plotting modelica output
+# original code from Gregor Henze/Yangyang Fu
+
 from buildingspy.io.outputfile import Reader
 import matplotlib.pyplot as plt
 
