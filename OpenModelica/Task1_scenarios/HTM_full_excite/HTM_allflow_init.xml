@@ -1,0 +1,3107 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+
+<!-- description of the model interface using an extention of the FMI standard -->
+<fmiModelDescription
+  fmiVersion                          = "1.0"
+
+  modelName                           = "HTM_allflow"
+  modelIdentifier                     = "HTM_allflow"
+
+  OPENMODELICAHOME                    = "/opt/openmodelica"
+
+  guid                                = "{228f1b65-5d7d-4546-9c74-5044d4b7c4dd}"
+
+  description                         = ""
+  generationTool                      = "OpenModelica Compiler OpenModelica 1.13.2"
+  generationDateAndTime               = "2019-09-12T15:58:31Z"
+
+  variableNamingConvention            = "structured"
+
+  numberOfEventIndicators             = "9"  cmt_numberOfEventIndicators             = "NG:       number of zero crossings,                           FMI"
+  numberOfTimeEvents                  = "0"  cmt_numberOfTimeEvents                  = "NG_SAM:   number of zero crossings that are samples,          OMC"
+
+  numberOfInputVariables              = "0"  cmt_numberOfInputVariables              = "NI:       number of inputvar on topmodel,                     OMC"
+  numberOfOutputVariables             = "0"  cmt_numberOfOutputVariables             = "NO:       number of outputvar on topmodel,                    OMC"
+
+  numberOfExternalObjects             = "0"  cmt_numberOfExternalObjects             = "NEXT:     number of external objects,                         OMC"
+  numberOfFunctions                   = "0"  cmt_numberOfFunctions                   = "NFUNC:    number of functions used by the simulation,         OMC"
+
+  numberOfContinuousStates            = "5"  cmt_numberOfContinuousStates            = "NX:       number of states,                                   FMI"
+  numberOfRealAlgebraicVariables      = "45"  cmt_numberOfRealAlgebraicVariables      = "NY:       number of real variables,                           OMC"
+  numberOfRealAlgebraicAliasVariables = "115"  cmt_numberOfRealAlgebraicAliasVariables = "NA:       number of alias variables,                          OMC"
+  numberOfRealParameters              = "63"  cmt_numberOfRealParameters              = "NP:       number of parameters,                               OMC"
+
+  numberOfIntegerAlgebraicVariables   = "2"  cmt_numberOfIntegerAlgebraicVariables   = "NYINT:    number of alg. int variables,                       OMC"
+  numberOfIntegerAliasVariables       = "0"  cmt_numberOfIntegerAliasVariables       = "NAINT:    number of alias int variables,                      OMC"
+  numberOfIntegerParameters           = "7"  cmt_numberOfIntegerParameters           = "NPINT:    number of int parameters,                           OMC"
+
+  numberOfStringAlgebraicVariables    = "0"  cmt_numberOfStringAlgebraicVariables    = "NYSTR:    number of alg. string variables,                    OMC"
+  numberOfStringAliasVariables        = "0"  cmt_numberOfStringAliasVariables        = "NASTR:    number of alias string variables,                   OMC"
+  numberOfStringParameters            = "0"  cmt_numberOfStringParameters            = "NPSTR:    number of string parameters,                        OMC"
+
+  numberOfBooleanAlgebraicVariables   = "2"  cmt_numberOfBooleanAlgebraicVariables   = "NYBOOL:   number of alg. bool variables,                      OMC"
+  numberOfBooleanAliasVariables       = "0"  cmt_numberOfBooleanAliasVariables       = "NABOOL:   number of alias bool variables,                     OMC"
+  numberOfBooleanParameters           = "10"  cmt_numberOfBooleanParameters           = "NPBOOL:   number of bool parameters,                          OMC" >
+
+
+  <!-- startTime, stopTime, tolerance are FMI specific, all others are OMC specific -->
+  <DefaultExperiment
+    startTime      = "0"
+    stopTime       = "172800"
+    stepSize       = "172.972972972973"
+    tolerance      = "1e-06"
+    solver        = "dassl"
+    outputFormat      = "mat"
+    variableFilter      = ".*" />
+
+  <!-- variables in the model -->
+  <ModelVariables>
+
+  <ScalarVariable
+    name = "HTM.A2.thermCapExt[1].T"
+    valueReference = "1000"
+    description = "Temperature of element"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "0" classType = "rSta"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "541" startColumn = "7" endLine = "542" endColumn = "33" fileWritable = "false">
+    <Real fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.thermCapExt[1].T"
+    valueReference = "1001"
+    description = "Temperature of element"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "1" classType = "rSta"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "541" startColumn = "7" endLine = "542" endColumn = "33" fileWritable = "false">
+    <Real fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.thermCapExt[1].T"
+    valueReference = "1002"
+    description = "Temperature of element"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "2" classType = "rSta"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "541" startColumn = "7" endLine = "542" endColumn = "33" fileWritable = "false">
+    <Real fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.thermCapExt[1].T"
+    valueReference = "1003"
+    description = "Temperature of element"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "3" classType = "rSta"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "541" startColumn = "7" endLine = "542" endColumn = "33" fileWritable = "false">
+    <Real fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.thermCapExt[1].T"
+    valueReference = "1004"
+    description = "Temperature of element"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "4" classType = "rSta"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "541" startColumn = "7" endLine = "542" endColumn = "33" fileWritable = "false">
+    <Real fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "der(HTM.A2.thermCapExt[1].T)"
+    valueReference = "1005"
+    description = "der(Temperature of element)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "0" classType = "rDer"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "541" startColumn = "7" endLine = "542" endColumn = "33" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="s-1.K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "der(HTM.B6.thermCapExt[1].T)"
+    valueReference = "1006"
+    description = "der(Temperature of element)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "1" classType = "rDer"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "541" startColumn = "7" endLine = "542" endColumn = "33" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="s-1.K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "der(HTM.B7.thermCapExt[1].T)"
+    valueReference = "1007"
+    description = "der(Temperature of element)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "2" classType = "rDer"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "541" startColumn = "7" endLine = "542" endColumn = "33" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="s-1.K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "der(HTM.E1.thermCapExt[1].T)"
+    valueReference = "1008"
+    description = "der(Temperature of element)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "3" classType = "rDer"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "541" startColumn = "7" endLine = "542" endColumn = "33" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="s-1.K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "der(HTM.X1.thermCapExt[1].T)"
+    valueReference = "1009"
+    description = "der(Temperature of element)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "4" classType = "rDer"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "541" startColumn = "7" endLine = "542" endColumn = "33" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="s-1.K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A0.res.dT"
+    valueReference = "1010"
+    description = "port_a.T - port_b.T"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "0" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "3074" startColumn = "7" endLine = "3074" endColumn = "70" fileWritable = "false">
+    <Real start="0.0" fixed="false" useNominal="false" unit="K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.heaFlo_ext.port.Q_flow"
+    valueReference = "1011"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "1" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.port_b.T"
+    valueReference = "1012"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "2" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.thermCapExt[1].der_T"
+    valueReference = "1013"
+    description = "Time derivative of temperature (= der(T))"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "3" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "543" startColumn = "7" endLine = "544" endColumn = "52" fileWritable = "false">
+    <Real start="0.0" fixed="false" useNominal="false" unit="K/s" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.thermCapExt[1].port.Q_flow"
+    valueReference = "1014"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "4" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real start="0.0" fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.thermResExt[1].dT"
+    valueReference = "1015"
+    description = "port_a.T - port_b.T"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "5" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "3074" startColumn = "7" endLine = "3074" endColumn = "70" fileWritable = "false">
+    <Real start="0.0" fixed="false" useNominal="false" unit="K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.thermResExtRem.dT"
+    valueReference = "1016"
+    description = "port_a.T - port_b.T"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "6" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "3074" startColumn = "7" endLine = "3074" endColumn = "70" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.port_a.T"
+    valueReference = "1017"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "7" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.port_b.T"
+    valueReference = "1018"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "8" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.thermCapExt[1].der_T"
+    valueReference = "1019"
+    description = "Time derivative of temperature (= der(T))"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "9" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "543" startColumn = "7" endLine = "544" endColumn = "52" fileWritable = "false">
+    <Real start="0.0" fixed="false" useNominal="false" unit="K/s" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.thermCapExt[1].port.Q_flow"
+    valueReference = "1020"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "10" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real start="0.0" fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.thermResExt[1].Q_flow"
+    valueReference = "1021"
+    description = "Heat flow rate from port_a -&gt; port_b"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "11" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "3072" startColumn = "7" endLine = "3073" endColumn = "47" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.thermResExt[1].dT"
+    valueReference = "1022"
+    description = "port_a.T - port_b.T"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "12" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "3074" startColumn = "7" endLine = "3074" endColumn = "70" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.thermResExtRem.dT"
+    valueReference = "1023"
+    description = "port_a.T - port_b.T"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "13" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "3074" startColumn = "7" endLine = "3074" endColumn = "70" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.port_b.T"
+    valueReference = "1024"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "14" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.thermCapExt[1].der_T"
+    valueReference = "1025"
+    description = "Time derivative of temperature (= der(T))"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "15" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "543" startColumn = "7" endLine = "544" endColumn = "52" fileWritable = "false">
+    <Real start="0.0" fixed="false" useNominal="false" unit="K/s" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.thermCapExt[1].port.Q_flow"
+    valueReference = "1026"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "16" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real start="0.0" fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.thermResExt[1].Q_flow"
+    valueReference = "1027"
+    description = "Heat flow rate from port_a -&gt; port_b"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "17" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "3072" startColumn = "7" endLine = "3073" endColumn = "47" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.thermResExt[1].dT"
+    valueReference = "1028"
+    description = "port_a.T - port_b.T"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "18" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "3074" startColumn = "7" endLine = "3074" endColumn = "70" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.thermResExtRem.dT"
+    valueReference = "1029"
+    description = "port_a.T - port_b.T"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "19" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "3074" startColumn = "7" endLine = "3074" endColumn = "70" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E0.res.dT"
+    valueReference = "1030"
+    description = "port_a.T - port_b.T"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "20" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "3074" startColumn = "7" endLine = "3074" endColumn = "70" fileWritable = "false">
+    <Real start="0.0" fixed="false" useNominal="false" unit="K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.heaFlo_int.port.Q_flow"
+    valueReference = "1031"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "21" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.thermCapExt[1].der_T"
+    valueReference = "1032"
+    description = "Time derivative of temperature (= der(T))"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "22" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "543" startColumn = "7" endLine = "544" endColumn = "52" fileWritable = "false">
+    <Real start="0.0" fixed="false" useNominal="false" unit="K/s" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.thermCapExt[1].port.Q_flow"
+    valueReference = "1033"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "23" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real start="0.0" fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.thermResExt[1].Q_flow"
+    valueReference = "1034"
+    description = "Heat flow rate from port_a -&gt; port_b"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "24" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "3072" startColumn = "7" endLine = "3073" endColumn = "47" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.thermResExt[1].dT"
+    valueReference = "1035"
+    description = "port_a.T - port_b.T"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "25" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "3074" startColumn = "7" endLine = "3074" endColumn = "70" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.thermResExtRem.dT"
+    valueReference = "1036"
+    description = "port_a.T - port_b.T"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "26" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "3074" startColumn = "7" endLine = "3074" endColumn = "70" fileWritable = "false">
+    <Real start="0.0" fixed="false" useNominal="false" unit="K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.T_ext"
+    valueReference = "1037"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "27" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Assignments/ESS/Task1/RCNetworks-task1/HighThermalMassWall_maggie.mo" startLine = "75" startColumn = "3" endLine = "76" endColumn = "169" fileWritable = "true">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.T_int"
+    valueReference = "1038"
+    description = "Indoor temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "28" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Assignments/ESS/Task1/RCNetworks-task1/HighThermalMassWall_maggie.mo" startLine = "35" startColumn = "3" endLine = "37" endColumn = "179" fileWritable = "true">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.Ts_ext"
+    valueReference = "1039"
+    description = "Exterior surface temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "29" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Assignments/ESS/Task1/RCNetworks-task1/HighThermalMassWall_maggie.mo" startLine = "48" startColumn = "3" endLine = "52" endColumn = "177" fileWritable = "true">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.Ts_int"
+    valueReference = "1040"
+    description = "Interior surface temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "30" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Assignments/ESS/Task1/RCNetworks-task1/HighThermalMassWall_maggie.mo" startLine = "56" startColumn = "3" endLine = "60" endColumn = "173" fileWritable = "true">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.thermCapExt[1].der_T"
+    valueReference = "1041"
+    description = "Time derivative of temperature (= der(T))"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "31" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "543" startColumn = "7" endLine = "544" endColumn = "52" fileWritable = "false">
+    <Real start="0.0" fixed="false" useNominal="false" unit="K/s" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.thermCapExt[1].port.Q_flow"
+    valueReference = "1042"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "32" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real start="0.0" fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.thermResExt[1].Q_flow"
+    valueReference = "1043"
+    description = "Heat flow rate from port_a -&gt; port_b"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "33" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "3072" startColumn = "7" endLine = "3073" endColumn = "47" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.thermResExt[1].dT"
+    valueReference = "1044"
+    description = "port_a.T - port_b.T"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "34" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "3074" startColumn = "7" endLine = "3074" endColumn = "70" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.thermResExtRem.dT"
+    valueReference = "1045"
+    description = "port_a.T - port_b.T"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "35" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "3074" startColumn = "7" endLine = "3074" endColumn = "70" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.q_ext"
+    valueReference = "1046"
+    description = "Solar radiance"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "36" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Assignments/ESS/Task1/RCNetworks-task1/HighThermalMassWall_maggie.mo" startLine = "39" startColumn = "3" endLine = "41" endColumn = "177" fileWritable = "true">
+    <Real fixed="false" useNominal="false" displayUnit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.q_int"
+    valueReference = "1047"
+    description = "Solar radiance"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "37" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Assignments/ESS/Task1/RCNetworks-task1/HighThermalMassWall_maggie.mo" startLine = "42" startColumn = "3" endLine = "44" endColumn = "177" fileWritable = "true">
+    <Real fixed="false" useNominal="false" displayUnit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.qs_ext"
+    valueReference = "1048"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "38" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Assignments/ESS/Task1/RCNetworks-task1/HighThermalMassWall_maggie.mo" startLine = "71" startColumn = "3" endLine = "72" endColumn = "203" fileWritable = "true">
+    <Real start="0.0" fixed="false" useNominal="false" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.qs_int"
+    valueReference = "1049"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "39" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Assignments/ESS/Task1/RCNetworks-task1/HighThermalMassWall_maggie.mo" startLine = "69" startColumn = "3" endLine = "70" endColumn = "201" fileWritable = "true">
+    <Real start="0.0" fixed="false" useNominal="false" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.senT_ext.port.Q_flow"
+    valueReference = "1050"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "40" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="true" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.senT_int.port.Q_flow"
+    valueReference = "1051"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "41" classType = "rAlg"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="true" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "T_int.T_width"
+    valueReference = "1052"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "42" classType = "rAlg"
+    isProtected = "true" hideResult = "true"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Sources.mo" startLine = "975" startColumn = "5" endLine = "975" endColumn = "51" fileWritable = "false">
+    <Real fixed="true" useNominal="false" unit="s" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "T_int.T_start"
+    valueReference = "1053"
+    description = "Start time of current period"
+    variability = "discrete" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "43" classType = "rAlg"
+    isProtected = "true" hideResult = "true"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Sources.mo" startLine = "976" startColumn = "5" endLine = "976" endColumn = "65" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="s" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "q_int.T_start"
+    valueReference = "1054"
+    description = "Start time of current period"
+    variability = "discrete" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "44" classType = "rAlg"
+    isProtected = "true" hideResult = "true"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Sources.mo" startLine = "1125" startColumn = "5" endLine = "1125" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="s" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A0.R"
+    valueReference = "1055"
+    description = "Constant thermal resistance"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "0" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Resistance.mo" startLine = "5" startColumn = "3" endLine = "6" endColumn = "34" fileWritable = "true">
+    <Real start="0.059" fixed="true" useNominal="false" unit="K/W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A0.res.R"
+    valueReference = "1056"
+    description = "Constant thermal resistance of material"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "1" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "762" startColumn = "7" endLine = "763" endColumn = "50" fileWritable = "false">
+    <Real fixed="true" useNominal="false" unit="K/W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.C[1]"
+    valueReference = "1057"
+    description = "Vector of heat capacities, from port_a to port_b"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "2" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "11" startColumn = "3" endLine = "14" endColumn = "45" fileWritable = "true">
+    <Real start="187220.0" fixed="true" useNominal="false" min="1e-60" unit="J/K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.R[1]"
+    valueReference = "1058"
+    description = "Vector of resistors, from port_a to port_b"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "3" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "6" startColumn = "3" endLine = "9" endColumn = "45" fileWritable = "true">
+    <Real start="0.038" fixed="true" useNominal="false" min="1e-60" unit="K/W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.R[2]"
+    valueReference = "1059"
+    description = "Vector of resistors, from port_a to port_b"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "4" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "6" startColumn = "3" endLine = "9" endColumn = "45" fileWritable = "true">
+    <Real start="0.038" fixed="true" useNominal="false" min="1e-60" unit="K/W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.T_start"
+    valueReference = "1060"
+    description = "Initial temperature of capacities"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "5" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "16" startColumn = "3" endLine = "18" endColumn = "45" fileWritable = "true">
+    <Real start="288.15" fixed="true" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.heaFlo_ext.T_ref"
+    valueReference = "1061"
+    description = "Reference temperature"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "6" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/Sources/PrescribedHeatFlow.mo" startLine = "3" startColumn = "3" endLine = "4" endColumn = "28" fileWritable = "true">
+    <Real start="293.15" fixed="true" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.heaFlo_ext.alpha"
+    valueReference = "1062"
+    description = "Temperature coefficient of heat flow rate"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "7" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/Sources/PrescribedHeatFlow.mo" startLine = "5" startColumn = "3" endLine = "6" endColumn = "48" fileWritable = "true">
+    <Real start="0.0" fixed="true" useNominal="false" unit="1/K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.thermCapExt[1].C"
+    valueReference = "1063"
+    description = "Heat capacity of element (= cp*m)"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "8" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "539" startColumn = "7" endLine = "540" endColumn = "44" fileWritable = "false">
+    <Real fixed="true" useNominal="false" unit="J/K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.thermResExt[1].R"
+    valueReference = "1064"
+    description = "Constant thermal resistance of material"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "9" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "762" startColumn = "7" endLine = "763" endColumn = "50" fileWritable = "false">
+    <Real fixed="true" useNominal="false" unit="K/W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.thermResExtRem.R"
+    valueReference = "1065"
+    description = "Constant thermal resistance of material"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "10" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "762" startColumn = "7" endLine = "763" endColumn = "50" fileWritable = "false">
+    <Real fixed="true" useNominal="false" unit="K/W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.C[1]"
+    valueReference = "1066"
+    description = "Vector of heat capacities, from port_a to port_b"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "11" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "11" startColumn = "3" endLine = "14" endColumn = "45" fileWritable = "true">
+    <Real start="17046.0" fixed="true" useNominal="false" min="1e-60" unit="J/K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.R[1]"
+    valueReference = "1067"
+    description = "Vector of resistors, from port_a to port_b"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "12" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "6" startColumn = "3" endLine = "9" endColumn = "45" fileWritable = "true">
+    <Real start="1.576" fixed="true" useNominal="false" min="1e-60" unit="K/W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.R[2]"
+    valueReference = "1068"
+    description = "Vector of resistors, from port_a to port_b"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "13" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "6" startColumn = "3" endLine = "9" endColumn = "45" fileWritable = "true">
+    <Real start="1.576" fixed="true" useNominal="false" min="1e-60" unit="K/W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.T_start"
+    valueReference = "1069"
+    description = "Initial temperature of capacities"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "14" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "16" startColumn = "3" endLine = "18" endColumn = "45" fileWritable = "true">
+    <Real start="288.15" fixed="true" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.thermCapExt[1].C"
+    valueReference = "1070"
+    description = "Heat capacity of element (= cp*m)"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "15" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "539" startColumn = "7" endLine = "540" endColumn = "44" fileWritable = "false">
+    <Real fixed="true" useNominal="false" unit="J/K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.thermResExt[1].R"
+    valueReference = "1071"
+    description = "Constant thermal resistance of material"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "16" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "762" startColumn = "7" endLine = "763" endColumn = "50" fileWritable = "false">
+    <Real fixed="true" useNominal="false" unit="K/W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.thermResExtRem.R"
+    valueReference = "1072"
+    description = "Constant thermal resistance of material"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "17" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "762" startColumn = "7" endLine = "763" endColumn = "50" fileWritable = "false">
+    <Real fixed="true" useNominal="false" unit="K/W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.C[1]"
+    valueReference = "1073"
+    description = "Vector of heat capacities, from port_a to port_b"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "18" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "11" startColumn = "3" endLine = "14" endColumn = "45" fileWritable = "true">
+    <Real start="314.0" fixed="true" useNominal="false" min="1e-60" unit="J/K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.R[1]"
+    valueReference = "1074"
+    description = "Vector of resistors, from port_a to port_b"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "19" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "6" startColumn = "3" endLine = "9" endColumn = "45" fileWritable = "true">
+    <Real start="0.08699999999999999" fixed="true" useNominal="false" min="1e-60" unit="K/W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.R[2]"
+    valueReference = "1075"
+    description = "Vector of resistors, from port_a to port_b"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "20" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "6" startColumn = "3" endLine = "9" endColumn = "45" fileWritable = "true">
+    <Real start="0.08699999999999999" fixed="true" useNominal="false" min="1e-60" unit="K/W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.T_start"
+    valueReference = "1076"
+    description = "Initial temperature of capacities"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "21" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "16" startColumn = "3" endLine = "18" endColumn = "45" fileWritable = "true">
+    <Real start="288.15" fixed="true" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.thermCapExt[1].C"
+    valueReference = "1077"
+    description = "Heat capacity of element (= cp*m)"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "22" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "539" startColumn = "7" endLine = "540" endColumn = "44" fileWritable = "false">
+    <Real fixed="true" useNominal="false" unit="J/K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.thermResExt[1].R"
+    valueReference = "1078"
+    description = "Constant thermal resistance of material"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "23" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "762" startColumn = "7" endLine = "763" endColumn = "50" fileWritable = "false">
+    <Real fixed="true" useNominal="false" unit="K/W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.thermResExtRem.R"
+    valueReference = "1079"
+    description = "Constant thermal resistance of material"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "24" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "762" startColumn = "7" endLine = "763" endColumn = "50" fileWritable = "false">
+    <Real fixed="true" useNominal="false" unit="K/W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E0.R"
+    valueReference = "1080"
+    description = "Constant thermal resistance"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "25" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Resistance.mo" startLine = "5" startColumn = "3" endLine = "6" endColumn = "34" fileWritable = "true">
+    <Real start="0.121" fixed="true" useNominal="false" unit="K/W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E0.res.R"
+    valueReference = "1081"
+    description = "Constant thermal resistance of material"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "26" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "762" startColumn = "7" endLine = "763" endColumn = "50" fileWritable = "false">
+    <Real fixed="true" useNominal="false" unit="K/W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.C[1]"
+    valueReference = "1082"
+    description = "Vector of heat capacities, from port_a to port_b"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "27" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "11" startColumn = "3" endLine = "14" endColumn = "45" fileWritable = "true">
+    <Real start="16400.0" fixed="true" useNominal="false" min="1e-60" unit="J/K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.R[1]"
+    valueReference = "1083"
+    description = "Vector of resistors, from port_a to port_b"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "28" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "6" startColumn = "3" endLine = "9" endColumn = "45" fileWritable = "true">
+    <Real start="0.017" fixed="true" useNominal="false" min="1e-60" unit="K/W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.R[2]"
+    valueReference = "1084"
+    description = "Vector of resistors, from port_a to port_b"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "29" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "6" startColumn = "3" endLine = "9" endColumn = "45" fileWritable = "true">
+    <Real start="0.17" fixed="true" useNominal="false" min="1e-60" unit="K/W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.T_start"
+    valueReference = "1085"
+    description = "Initial temperature of capacities"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "30" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "16" startColumn = "3" endLine = "18" endColumn = "45" fileWritable = "true">
+    <Real start="288.15" fixed="true" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.heaFlo_int.T_ref"
+    valueReference = "1086"
+    description = "Reference temperature"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "31" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/Sources/PrescribedHeatFlow.mo" startLine = "3" startColumn = "3" endLine = "4" endColumn = "28" fileWritable = "true">
+    <Real start="293.15" fixed="true" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.heaFlo_int.alpha"
+    valueReference = "1087"
+    description = "Temperature coefficient of heat flow rate"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "32" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/Sources/PrescribedHeatFlow.mo" startLine = "5" startColumn = "3" endLine = "6" endColumn = "48" fileWritable = "true">
+    <Real start="0.0" fixed="true" useNominal="false" unit="1/K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.thermCapExt[1].C"
+    valueReference = "1088"
+    description = "Heat capacity of element (= cp*m)"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "33" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "539" startColumn = "7" endLine = "540" endColumn = "44" fileWritable = "false">
+    <Real fixed="true" useNominal="false" unit="J/K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.thermResExt[1].R"
+    valueReference = "1089"
+    description = "Constant thermal resistance of material"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "34" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "762" startColumn = "7" endLine = "763" endColumn = "50" fileWritable = "false">
+    <Real fixed="true" useNominal="false" unit="K/W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.thermResExtRem.R"
+    valueReference = "1090"
+    description = "Constant thermal resistance of material"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "35" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "762" startColumn = "7" endLine = "763" endColumn = "50" fileWritable = "false">
+    <Real fixed="true" useNominal="false" unit="K/W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.T_start"
+    valueReference = "1091"
+    description = "Initial temperature of capacities"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "36" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Assignments/ESS/Task1/RCNetworks-task1/HighThermalMassWall_maggie.mo" startLine = "5" startColumn = "3" endLine = "6" endColumn = "40" fileWritable = "true">
+    <Real start="293.15" fixed="true" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.C[1]"
+    valueReference = "1092"
+    description = "Vector of heat capacities, from port_a to port_b"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "37" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "11" startColumn = "3" endLine = "14" endColumn = "45" fileWritable = "true">
+    <Real start="5370.0" fixed="true" useNominal="false" min="1e-60" unit="J/K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.R[1]"
+    valueReference = "1093"
+    description = "Vector of resistors, from port_a to port_b"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "38" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "6" startColumn = "3" endLine = "9" endColumn = "45" fileWritable = "true">
+    <Real start="1.761" fixed="true" useNominal="false" min="1e-60" unit="K/W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.R[2]"
+    valueReference = "1094"
+    description = "Vector of resistors, from port_a to port_b"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "39" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "6" startColumn = "3" endLine = "9" endColumn = "45" fileWritable = "true">
+    <Real start="1.761" fixed="true" useNominal="false" min="1e-60" unit="K/W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.T_start"
+    valueReference = "1095"
+    description = "Initial temperature of capacities"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "40" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "16" startColumn = "3" endLine = "18" endColumn = "45" fileWritable = "true">
+    <Real start="288.15" fixed="true" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.thermCapExt[1].C"
+    valueReference = "1096"
+    description = "Heat capacity of element (= cp*m)"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "41" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "539" startColumn = "7" endLine = "540" endColumn = "44" fileWritable = "false">
+    <Real fixed="true" useNominal="false" unit="J/K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.thermResExt[1].R"
+    valueReference = "1097"
+    description = "Constant thermal resistance of material"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "42" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "762" startColumn = "7" endLine = "763" endColumn = "50" fileWritable = "false">
+    <Real fixed="true" useNominal="false" unit="K/W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.thermResExtRem.R"
+    valueReference = "1098"
+    description = "Constant thermal resistance of material"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "43" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "762" startColumn = "7" endLine = "763" endColumn = "50" fileWritable = "false">
+    <Real fixed="true" useNominal="false" unit="K/W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "T_ext.amplitude"
+    valueReference = "1099"
+    description = "Amplitude of sine wave"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "44" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Sources.mo" startLine = "517" startColumn = "5" endLine = "518" endColumn = "98" fileWritable = "false">
+    <Real start="20.0" fixed="true" useNominal="false" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "T_ext.freqHz"
+    valueReference = "1100"
+    description = "Frequency of sine wave"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "45" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Sources.mo" startLine = "519" startColumn = "5" endLine = "519" endColumn = "73" fileWritable = "false">
+    <Real start="1.736111111111111e-05" fixed="true" useNominal="false" unit="Hz" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "T_ext.offset"
+    valueReference = "1101"
+    description = "Offset of output signal y"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "46" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Interfaces.mo" startLine = "479" startColumn = "5" endLine = "479" endColumn = "56" fileWritable = "false">
+    <Real start="273.15" fixed="true" useNominal="false" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "T_ext.phase"
+    valueReference = "1102"
+    description = "Phase of sine wave"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "47" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Sources.mo" startLine = "520" startColumn = "5" endLine = "520" endColumn = "57" fileWritable = "false">
+    <Real start="0.0" fixed="true" useNominal="false" unit="rad" displayUnit="deg" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "T_ext.startTime"
+    valueReference = "1103"
+    description = "Output y = offset for time &lt; startTime"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "48" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Interfaces.mo" startLine = "480" startColumn = "5" endLine = "480" endColumn = "80" fileWritable = "false">
+    <Real start="0.0" fixed="true" useNominal="false" unit="s" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "T_int.amplitude"
+    valueReference = "1104"
+    description = "Amplitude of pulse"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "49" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Sources.mo" startLine = "964" startColumn = "5" endLine = "965" endColumn = "99" fileWritable = "false">
+    <Real start="-30.0" fixed="true" useNominal="false" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "T_int.offset"
+    valueReference = "1105"
+    description = "Offset of output signal y"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "50" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Interfaces.mo" startLine = "479" startColumn = "5" endLine = "479" endColumn = "56" fileWritable = "false">
+    <Real start="293.15" fixed="true" useNominal="false" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "T_int.period"
+    valueReference = "1106"
+    description = "Time for one period"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "51" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Sources.mo" startLine = "969" startColumn = "5" endLine = "970" endColumn = "39" fileWritable = "false">
+    <Real start="61200.0" fixed="true" useNominal="false" min="1e-60" unit="s" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "T_int.startTime"
+    valueReference = "1107"
+    description = "Output y = offset for time &lt; startTime"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "52" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Interfaces.mo" startLine = "480" startColumn = "5" endLine = "480" endColumn = "80" fileWritable = "false">
+    <Real start="7200.0" fixed="true" useNominal="false" unit="s" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "T_int.width"
+    valueReference = "1108"
+    description = "Width of pulse in % of period"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "53" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Sources.mo" startLine = "966" startColumn = "5" endLine = "968" endColumn = "58" fileWritable = "false">
+    <Real start="40.0" fixed="true" useNominal="false" min="1e-60" max="100.0" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "q_ext.amplitude"
+    valueReference = "1109"
+    description = "Amplitude of cosine wave"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "54" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Sources.mo" startLine = "620" startColumn = "5" endLine = "621" endColumn = "100" fileWritable = "false">
+    <Real start="20.0" fixed="true" useNominal="false" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "q_ext.freqHz"
+    valueReference = "1110"
+    description = "Frequency of cosine wave"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "55" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Sources.mo" startLine = "622" startColumn = "5" endLine = "622" endColumn = "75" fileWritable = "false">
+    <Real start="1.068376068376068e-05" fixed="true" useNominal="false" unit="Hz" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "q_ext.offset"
+    valueReference = "1111"
+    description = "Offset of output signal y"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "56" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Interfaces.mo" startLine = "479" startColumn = "5" endLine = "479" endColumn = "56" fileWritable = "false">
+    <Real start="273.15" fixed="true" useNominal="false" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "q_ext.phase"
+    valueReference = "1112"
+    description = "Phase of cosine wave"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "57" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Sources.mo" startLine = "623" startColumn = "5" endLine = "623" endColumn = "59" fileWritable = "false">
+    <Real start="0.0" fixed="true" useNominal="false" unit="rad" displayUnit="deg" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "q_ext.startTime"
+    valueReference = "1113"
+    description = "Output y = offset for time &lt; startTime"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "58" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Interfaces.mo" startLine = "480" startColumn = "5" endLine = "480" endColumn = "80" fileWritable = "false">
+    <Real start="0.0" fixed="true" useNominal="false" unit="s" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "q_int.amplitude"
+    valueReference = "1114"
+    description = "Amplitude of saw tooth"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "59" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Sources.mo" startLine = "1117" startColumn = "5" endLine = "1118" endColumn = "102" fileWritable = "false">
+    <Real start="25.0" fixed="true" useNominal="false" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "q_int.offset"
+    valueReference = "1115"
+    description = "Offset of output signal y"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "60" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Interfaces.mo" startLine = "479" startColumn = "5" endLine = "479" endColumn = "56" fileWritable = "false">
+    <Real start="273.15" fixed="true" useNominal="false" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "q_int.period"
+    valueReference = "1116"
+    description = "Time for one period"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "61" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Sources.mo" startLine = "1119" startColumn = "5" endLine = "1120" endColumn = "28" fileWritable = "false">
+    <Real start="43200.0" fixed="true" useNominal="false" min="1e-60" unit="s" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "q_int.startTime"
+    valueReference = "1117"
+    description = "Output y = offset for time &lt; startTime"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "62" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Interfaces.mo" startLine = "480" startColumn = "5" endLine = "480" endColumn = "80" fileWritable = "false">
+    <Real start="180.0" fixed="true" useNominal="false" unit="s" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A0.port_a.Q_flow"
+    valueReference = "1118"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.qs_ext"
+    classIndex = "0" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A0.port_a.T"
+    valueReference = "1119"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.T_ext"
+    classIndex = "1" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A0.port_b.Q_flow"
+    valueReference = "1120"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "negatedAlias" aliasVariable="HTM.qs_ext"
+    classIndex = "2" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A0.port_b.T"
+    valueReference = "1121"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.Ts_ext"
+    classIndex = "3" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A0.res.Q_flow"
+    valueReference = "1122"
+    description = "Heat flow rate from port_a -&gt; port_b"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.qs_ext"
+    classIndex = "4" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "3072" startColumn = "7" endLine = "3073" endColumn = "47" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A0.res.port_a.Q_flow"
+    valueReference = "1123"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.qs_ext"
+    classIndex = "5" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A0.res.port_a.T"
+    valueReference = "1124"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.T_ext"
+    classIndex = "6" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A0.res.port_b.Q_flow"
+    valueReference = "1125"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "negatedAlias" aliasVariable="HTM.qs_ext"
+    classIndex = "7" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A0.res.port_b.T"
+    valueReference = "1126"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.Ts_ext"
+    classIndex = "8" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.heaFlo_ext.Q_flow"
+    valueReference = "1127"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.q_ext"
+    classIndex = "9" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/Sources/PrescribedHeatFlow.mo" startLine = "7" startColumn = "3" endLine = "11" endColumn = "24" fileWritable = "true">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.heaFlo_ext.port.T"
+    valueReference = "1128"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.A2.thermCapExt[1].T"
+    classIndex = "10" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.port_a.Q_flow"
+    valueReference = "1129"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.qs_ext"
+    classIndex = "11" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.port_a.T"
+    valueReference = "1130"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.Ts_ext"
+    classIndex = "12" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.port_b.Q_flow"
+    valueReference = "1131"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "negatedAlias" aliasVariable="HTM.B7.thermResExt[1].Q_flow"
+    classIndex = "13" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.q_ext"
+    valueReference = "1132"
+    description = "Solar radiance"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.q_ext"
+    classIndex = "14" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "47" startColumn = "3" endLine = "50" endColumn = "75" fileWritable = "true">
+    <Real fixed="false" useNominal="false" displayUnit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.thermCapExt[1].port.T"
+    valueReference = "1133"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.A2.thermCapExt[1].T"
+    classIndex = "15" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.thermResExt[1].Q_flow"
+    valueReference = "1134"
+    description = "Heat flow rate from port_a -&gt; port_b"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.qs_ext"
+    classIndex = "16" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "3072" startColumn = "7" endLine = "3073" endColumn = "47" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.thermResExt[1].port_a.Q_flow"
+    valueReference = "1135"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.qs_ext"
+    classIndex = "17" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.thermResExt[1].port_a.T"
+    valueReference = "1136"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.Ts_ext"
+    classIndex = "18" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.thermResExt[1].port_b.Q_flow"
+    valueReference = "1137"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "negatedAlias" aliasVariable="HTM.qs_ext"
+    classIndex = "19" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.thermResExt[1].port_b.T"
+    valueReference = "1138"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.A2.thermCapExt[1].T"
+    classIndex = "20" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.thermResExtRem.Q_flow"
+    valueReference = "1139"
+    description = "Heat flow rate from port_a -&gt; port_b"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.B7.thermResExt[1].Q_flow"
+    classIndex = "21" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "3072" startColumn = "7" endLine = "3073" endColumn = "47" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.thermResExtRem.port_a.Q_flow"
+    valueReference = "1140"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.B7.thermResExt[1].Q_flow"
+    classIndex = "22" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.thermResExtRem.port_a.T"
+    valueReference = "1141"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.A2.thermCapExt[1].T"
+    classIndex = "23" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.thermResExtRem.port_b.Q_flow"
+    valueReference = "1142"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "negatedAlias" aliasVariable="HTM.B7.thermResExt[1].Q_flow"
+    classIndex = "24" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.thermResExtRem.port_b.T"
+    valueReference = "1143"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.A2.port_b.T"
+    classIndex = "25" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.port_a.Q_flow"
+    valueReference = "1144"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.B6.thermResExt[1].Q_flow"
+    classIndex = "26" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.port_b.Q_flow"
+    valueReference = "1145"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "negatedAlias" aliasVariable="HTM.E1.thermResExt[1].Q_flow"
+    classIndex = "27" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.thermCapExt[1].port.T"
+    valueReference = "1146"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.B6.thermCapExt[1].T"
+    classIndex = "28" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.thermResExt[1].port_a.Q_flow"
+    valueReference = "1147"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.B6.thermResExt[1].Q_flow"
+    classIndex = "29" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.thermResExt[1].port_a.T"
+    valueReference = "1148"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.B6.port_a.T"
+    classIndex = "30" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.thermResExt[1].port_b.Q_flow"
+    valueReference = "1149"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "negatedAlias" aliasVariable="HTM.B6.thermResExt[1].Q_flow"
+    classIndex = "31" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.thermResExt[1].port_b.T"
+    valueReference = "1150"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.B6.thermCapExt[1].T"
+    classIndex = "32" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.thermResExtRem.Q_flow"
+    valueReference = "1151"
+    description = "Heat flow rate from port_a -&gt; port_b"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.E1.thermResExt[1].Q_flow"
+    classIndex = "33" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "3072" startColumn = "7" endLine = "3073" endColumn = "47" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.thermResExtRem.port_a.Q_flow"
+    valueReference = "1152"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.E1.thermResExt[1].Q_flow"
+    classIndex = "34" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.thermResExtRem.port_a.T"
+    valueReference = "1153"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.B6.thermCapExt[1].T"
+    classIndex = "35" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.thermResExtRem.port_b.Q_flow"
+    valueReference = "1154"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "negatedAlias" aliasVariable="HTM.E1.thermResExt[1].Q_flow"
+    classIndex = "36" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.thermResExtRem.port_b.T"
+    valueReference = "1155"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.B6.port_b.T"
+    classIndex = "37" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.port_a.Q_flow"
+    valueReference = "1156"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.B7.thermResExt[1].Q_flow"
+    classIndex = "38" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.port_a.T"
+    valueReference = "1157"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.A2.port_b.T"
+    classIndex = "39" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.port_b.Q_flow"
+    valueReference = "1158"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "negatedAlias" aliasVariable="HTM.X1.thermResExt[1].Q_flow"
+    classIndex = "40" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.thermCapExt[1].port.T"
+    valueReference = "1159"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.B7.thermCapExt[1].T"
+    classIndex = "41" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.thermResExt[1].port_a.Q_flow"
+    valueReference = "1160"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.B7.thermResExt[1].Q_flow"
+    classIndex = "42" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.thermResExt[1].port_a.T"
+    valueReference = "1161"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.A2.port_b.T"
+    classIndex = "43" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.thermResExt[1].port_b.Q_flow"
+    valueReference = "1162"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "negatedAlias" aliasVariable="HTM.B7.thermResExt[1].Q_flow"
+    classIndex = "44" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.thermResExt[1].port_b.T"
+    valueReference = "1163"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.B7.thermCapExt[1].T"
+    classIndex = "45" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.thermResExtRem.Q_flow"
+    valueReference = "1164"
+    description = "Heat flow rate from port_a -&gt; port_b"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.X1.thermResExt[1].Q_flow"
+    classIndex = "46" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "3072" startColumn = "7" endLine = "3073" endColumn = "47" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.thermResExtRem.port_a.Q_flow"
+    valueReference = "1165"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.X1.thermResExt[1].Q_flow"
+    classIndex = "47" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.thermResExtRem.port_a.T"
+    valueReference = "1166"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.B7.thermCapExt[1].T"
+    classIndex = "48" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.thermResExtRem.port_b.Q_flow"
+    valueReference = "1167"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "negatedAlias" aliasVariable="HTM.X1.thermResExt[1].Q_flow"
+    classIndex = "49" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.thermResExtRem.port_b.T"
+    valueReference = "1168"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.B7.port_b.T"
+    classIndex = "50" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E0.port_a.Q_flow"
+    valueReference = "1169"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "negatedAlias" aliasVariable="HTM.qs_int"
+    classIndex = "51" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E0.port_a.T"
+    valueReference = "1170"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.T_int"
+    classIndex = "52" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E0.port_b.Q_flow"
+    valueReference = "1171"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.qs_int"
+    classIndex = "53" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E0.port_b.T"
+    valueReference = "1172"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.Ts_int"
+    classIndex = "54" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E0.res.Q_flow"
+    valueReference = "1173"
+    description = "Heat flow rate from port_a -&gt; port_b"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "negatedAlias" aliasVariable="HTM.qs_int"
+    classIndex = "55" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "3072" startColumn = "7" endLine = "3073" endColumn = "47" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E0.res.port_a.Q_flow"
+    valueReference = "1174"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "negatedAlias" aliasVariable="HTM.qs_int"
+    classIndex = "56" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E0.res.port_a.T"
+    valueReference = "1175"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.T_int"
+    classIndex = "57" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E0.res.port_b.Q_flow"
+    valueReference = "1176"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.qs_int"
+    classIndex = "58" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E0.res.port_b.T"
+    valueReference = "1177"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.Ts_int"
+    classIndex = "59" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.heaFlo_int.Q_flow"
+    valueReference = "1178"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.q_int"
+    classIndex = "60" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/Sources/PrescribedHeatFlow.mo" startLine = "7" startColumn = "3" endLine = "11" endColumn = "24" fileWritable = "true">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.heaFlo_int.port.T"
+    valueReference = "1179"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.E1.thermCapExt[1].T"
+    classIndex = "61" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.port_a.Q_flow"
+    valueReference = "1180"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.E1.thermResExt[1].Q_flow"
+    classIndex = "62" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.port_a.T"
+    valueReference = "1181"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.B6.port_b.T"
+    classIndex = "63" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.port_b.Q_flow"
+    valueReference = "1182"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "negatedAlias" aliasVariable="HTM.qs_int"
+    classIndex = "64" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.port_b.T"
+    valueReference = "1183"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.Ts_int"
+    classIndex = "65" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.q_int"
+    valueReference = "1184"
+    description = "Solar radiance"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.q_int"
+    classIndex = "66" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "54" startColumn = "3" endLine = "57" endColumn = "76" fileWritable = "true">
+    <Real fixed="false" useNominal="false" displayUnit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.thermCapExt[1].port.T"
+    valueReference = "1185"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.E1.thermCapExt[1].T"
+    classIndex = "67" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.thermResExt[1].port_a.Q_flow"
+    valueReference = "1186"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.E1.thermResExt[1].Q_flow"
+    classIndex = "68" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.thermResExt[1].port_a.T"
+    valueReference = "1187"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.B6.port_b.T"
+    classIndex = "69" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.thermResExt[1].port_b.Q_flow"
+    valueReference = "1188"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "negatedAlias" aliasVariable="HTM.E1.thermResExt[1].Q_flow"
+    classIndex = "70" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.thermResExt[1].port_b.T"
+    valueReference = "1189"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.E1.thermCapExt[1].T"
+    classIndex = "71" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.thermResExtRem.Q_flow"
+    valueReference = "1190"
+    description = "Heat flow rate from port_a -&gt; port_b"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.qs_int"
+    classIndex = "72" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "3072" startColumn = "7" endLine = "3073" endColumn = "47" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.thermResExtRem.port_a.Q_flow"
+    valueReference = "1191"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.qs_int"
+    classIndex = "73" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.thermResExtRem.port_a.T"
+    valueReference = "1192"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.E1.thermCapExt[1].T"
+    classIndex = "74" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.thermResExtRem.port_b.Q_flow"
+    valueReference = "1193"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "negatedAlias" aliasVariable="HTM.qs_int"
+    classIndex = "75" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.thermResExtRem.port_b.T"
+    valueReference = "1194"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.Ts_int"
+    classIndex = "76" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.port_a.Q_flow"
+    valueReference = "1195"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.X1.thermResExt[1].Q_flow"
+    classIndex = "77" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.port_a.T"
+    valueReference = "1196"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.B7.port_b.T"
+    classIndex = "78" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.port_b.Q_flow"
+    valueReference = "1197"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "negatedAlias" aliasVariable="HTM.B6.thermResExt[1].Q_flow"
+    classIndex = "79" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.port_b.T"
+    valueReference = "1198"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.B6.port_a.T"
+    classIndex = "80" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.thermCapExt[1].port.T"
+    valueReference = "1199"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.X1.thermCapExt[1].T"
+    classIndex = "81" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.thermResExt[1].port_a.Q_flow"
+    valueReference = "1200"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.X1.thermResExt[1].Q_flow"
+    classIndex = "82" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.thermResExt[1].port_a.T"
+    valueReference = "1201"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.B7.port_b.T"
+    classIndex = "83" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.thermResExt[1].port_b.Q_flow"
+    valueReference = "1202"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "negatedAlias" aliasVariable="HTM.X1.thermResExt[1].Q_flow"
+    classIndex = "84" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.thermResExt[1].port_b.T"
+    valueReference = "1203"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.X1.thermCapExt[1].T"
+    classIndex = "85" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.thermResExtRem.Q_flow"
+    valueReference = "1204"
+    description = "Heat flow rate from port_a -&gt; port_b"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.B6.thermResExt[1].Q_flow"
+    classIndex = "86" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "3072" startColumn = "7" endLine = "3073" endColumn = "47" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.thermResExtRem.port_a.Q_flow"
+    valueReference = "1205"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.B6.thermResExt[1].Q_flow"
+    classIndex = "87" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.thermResExtRem.port_a.T"
+    valueReference = "1206"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.X1.thermCapExt[1].T"
+    classIndex = "88" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.thermResExtRem.port_b.Q_flow"
+    valueReference = "1207"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "negatedAlias" aliasVariable="HTM.B6.thermResExt[1].Q_flow"
+    classIndex = "89" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.thermResExtRem.port_b.T"
+    valueReference = "1208"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.B6.port_a.T"
+    classIndex = "90" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.heatFlowSensor_ext.Q_flow"
+    valueReference = "1209"
+    description = "Heat flow from port_a to port_b as output signal"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.qs_ext"
+    classIndex = "91" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "1559" startColumn = "7" endLine = "1564" endColumn = "28" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.heatFlowSensor_ext.port_a.Q_flow"
+    valueReference = "1210"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.qs_ext"
+    classIndex = "92" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.heatFlowSensor_ext.port_a.T"
+    valueReference = "1211"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.Ts_ext"
+    classIndex = "93" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.heatFlowSensor_ext.port_b.Q_flow"
+    valueReference = "1212"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "negatedAlias" aliasVariable="HTM.qs_ext"
+    classIndex = "94" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.heatFlowSensor_ext.port_b.T"
+    valueReference = "1213"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.Ts_ext"
+    classIndex = "95" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.heatFlowSensor_int.Q_flow"
+    valueReference = "1214"
+    description = "Heat flow from port_a to port_b as output signal"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.qs_int"
+    classIndex = "96" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "1559" startColumn = "7" endLine = "1564" endColumn = "28" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.heatFlowSensor_int.port_a.Q_flow"
+    valueReference = "1215"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.qs_int"
+    classIndex = "97" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.heatFlowSensor_int.port_a.T"
+    valueReference = "1216"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.Ts_int"
+    classIndex = "98" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.heatFlowSensor_int.port_b.Q_flow"
+    valueReference = "1217"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "negatedAlias" aliasVariable="HTM.qs_int"
+    classIndex = "99" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.heatFlowSensor_int.port_b.T"
+    valueReference = "1218"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.Ts_int"
+    classIndex = "100" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.senT_ext.T"
+    valueReference = "1219"
+    description = "Absolute temperature as output signal"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.Ts_ext"
+    classIndex = "101" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "1425" startColumn = "7" endLine = "1427" endColumn = "75" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.senT_ext.port.T"
+    valueReference = "1220"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.Ts_ext"
+    classIndex = "102" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.senT_int.T"
+    valueReference = "1221"
+    description = "Absolute temperature as output signal"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.Ts_int"
+    classIndex = "103" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "1425" startColumn = "7" endLine = "1427" endColumn = "75" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.senT_int.port.T"
+    valueReference = "1222"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.Ts_int"
+    classIndex = "104" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.temReaCon_ext.T"
+    valueReference = "1223"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.T_ext"
+    classIndex = "105" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/Sources/PrescribedTemperature.mo" startLine = "7" startColumn = "3" endLine = "8" endColumn = "43" fileWritable = "true">
+    <Real fixed="false" useNominal="false" unit="K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.temReaCon_ext.port.Q_flow"
+    valueReference = "1224"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "negatedAlias" aliasVariable="HTM.qs_ext"
+    classIndex = "106" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.temReaCon_ext.port.T"
+    valueReference = "1225"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.T_ext"
+    classIndex = "107" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.temReaCon_int.T"
+    valueReference = "1226"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.T_int"
+    classIndex = "108" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/Sources/PrescribedTemperature.mo" startLine = "7" startColumn = "3" endLine = "8" endColumn = "43" fileWritable = "true">
+    <Real fixed="false" useNominal="false" unit="K" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.temReaCon_int.port.Q_flow"
+    valueReference = "1227"
+    description = "Heat flow rate (positive if flowing from outside into the component)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.qs_int"
+    classIndex = "109" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2990" startColumn = "7" endLine = "2991" endColumn = "79" fileWritable = "false">
+    <Real fixed="false" useNominal="false" unit="W" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.temReaCon_int.port.T"
+    valueReference = "1228"
+    description = "Port temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.T_int"
+    classIndex = "110" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Thermal/HeatTransfer.mo" startLine = "2989" startColumn = "7" endLine = "2989" endColumn = "56" fileWritable = "false">
+    <Real start="288.15" fixed="false" useNominal="true" nominal="300.0" min="0.0" unit="K" displayUnit="degC" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "T_ext.y"
+    valueReference = "1229"
+    description = "Connector of Real output signal"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.T_ext"
+    classIndex = "111" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Interfaces.mo" startLine = "300" startColumn = "5" endLine = "301" endColumn = "56" fileWritable = "false">
+    <Real fixed="false" useNominal="false" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "T_int.y"
+    valueReference = "1230"
+    description = "Connector of Real output signal"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.T_int"
+    classIndex = "112" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Interfaces.mo" startLine = "300" startColumn = "5" endLine = "301" endColumn = "56" fileWritable = "false">
+    <Real fixed="false" useNominal="false" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "q_ext.y"
+    valueReference = "1231"
+    description = "Connector of Real output signal"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.q_ext"
+    classIndex = "113" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Interfaces.mo" startLine = "300" startColumn = "5" endLine = "301" endColumn = "56" fileWritable = "false">
+    <Real fixed="false" useNominal="false" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "q_int.y"
+    valueReference = "1232"
+    description = "Connector of Real output signal"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "alias" aliasVariable="HTM.q_int"
+    classIndex = "114" classType = "rAli"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Interfaces.mo" startLine = "300" startColumn = "5" endLine = "301" endColumn = "56" fileWritable = "false">
+    <Real fixed="false" useNominal="false" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "T_int.count"
+    valueReference = "1233"
+    description = "Period count"
+    variability = "discrete" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "0" classType = "iAlg"
+    isProtected = "true" hideResult = "true"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Sources.mo" startLine = "977" startColumn = "5" endLine = "977" endColumn = "33" fileWritable = "false">
+    <Integer fixed="false" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "q_int.count"
+    valueReference = "1234"
+    description = "Period count"
+    variability = "discrete" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "1" classType = "iAlg"
+    isProtected = "true" hideResult = "true"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Sources.mo" startLine = "1126" startColumn = "5" endLine = "1126" endColumn = "33" fileWritable = "false">
+    <Integer fixed="false" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.n"
+    valueReference = "1235"
+    description = "Number of C-elements:"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "0" classType = "iPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "5" startColumn = "3" endLine = "5" endColumn = "59" fileWritable = "true">
+    <Integer start="1" fixed="true" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.n"
+    valueReference = "1236"
+    description = "Number of C-elements:"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "1" classType = "iPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "5" startColumn = "3" endLine = "5" endColumn = "59" fileWritable = "true">
+    <Integer start="1" fixed="true" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.n"
+    valueReference = "1237"
+    description = "Number of C-elements:"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "2" classType = "iPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "5" startColumn = "3" endLine = "5" endColumn = "59" fileWritable = "true">
+    <Integer start="1" fixed="true" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.n"
+    valueReference = "1238"
+    description = "Number of C-elements:"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "3" classType = "iPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "5" startColumn = "3" endLine = "5" endColumn = "59" fileWritable = "true">
+    <Integer start="1" fixed="true" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.n"
+    valueReference = "1239"
+    description = "Number of C-elements:"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "4" classType = "iPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "5" startColumn = "3" endLine = "5" endColumn = "59" fileWritable = "true">
+    <Integer start="1" fixed="true" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "T_int.nperiod"
+    valueReference = "1240"
+    description = "Number of periods (&lt; 0 means infinite number of periods)"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "5" classType = "iPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Sources.mo" startLine = "971" startColumn = "5" endLine = "972" endColumn = "65" fileWritable = "false">
+    <Integer start="-1" fixed="true" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "q_int.nperiod"
+    valueReference = "1241"
+    description = "Number of periods (&lt; 0 means infinite number of periods)"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "6" classType = "iPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Sources.mo" startLine = "1121" startColumn = "5" endLine = "1122" endColumn = "65" fileWritable = "false">
+    <Integer start="-1" fixed="true" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "$whenCondition1"
+    valueReference = "1242"
+    description = "integer((time - q_int.startTime) / q_int.period) &gt; pre(q_int.count)"
+    variability = "discrete" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "0" classType = "bAlg"
+    isProtected = "true" hideResult = "true"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Sources.mo" startLine = "1132" startColumn = "7" endLine = "1132" endColumn = "29" fileWritable = "false">
+    <Boolean fixed="true" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "$whenCondition2"
+    valueReference = "1243"
+    description = "integer((time - T_int.startTime) / T_int.period) &gt; pre(T_int.count)"
+    variability = "discrete" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "1" classType = "bAlg"
+    isProtected = "true" hideResult = "true"
+    fileName = "/opt/openmodelica/lib/omlibrary/Modelica 3.2.3/Blocks/Sources.mo" startLine = "983" startColumn = "7" endLine = "983" endColumn = "29" fileWritable = "false">
+    <Boolean fixed="true" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.use_externalQ"
+    valueReference = "1244"
+    description = "Use external heat flow if True"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "0" classType = "bPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "19" startColumn = "3" endLine = "20" endColumn = "37" fileWritable = "true">
+    <Boolean start="true" fixed="true" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.A2.use_internalQ"
+    valueReference = "1245"
+    description = "Use internal heat flow if True"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "1" classType = "bPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "21" startColumn = "3" endLine = "22" endColumn = "37" fileWritable = "true">
+    <Boolean start="false" fixed="true" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.use_externalQ"
+    valueReference = "1246"
+    description = "Use external heat flow if True"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "2" classType = "bPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "19" startColumn = "3" endLine = "20" endColumn = "37" fileWritable = "true">
+    <Boolean start="false" fixed="true" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B6.use_internalQ"
+    valueReference = "1247"
+    description = "Use internal heat flow if True"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "3" classType = "bPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "21" startColumn = "3" endLine = "22" endColumn = "37" fileWritable = "true">
+    <Boolean start="false" fixed="true" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.use_externalQ"
+    valueReference = "1248"
+    description = "Use external heat flow if True"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "4" classType = "bPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "19" startColumn = "3" endLine = "20" endColumn = "37" fileWritable = "true">
+    <Boolean start="false" fixed="true" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.B7.use_internalQ"
+    valueReference = "1249"
+    description = "Use internal heat flow if True"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "5" classType = "bPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "21" startColumn = "3" endLine = "22" endColumn = "37" fileWritable = "true">
+    <Boolean start="false" fixed="true" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.use_externalQ"
+    valueReference = "1250"
+    description = "Use external heat flow if True"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "6" classType = "bPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "19" startColumn = "3" endLine = "20" endColumn = "37" fileWritable = "true">
+    <Boolean start="false" fixed="true" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.E1.use_internalQ"
+    valueReference = "1251"
+    description = "Use internal heat flow if True"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "7" classType = "bPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "21" startColumn = "3" endLine = "22" endColumn = "37" fileWritable = "true">
+    <Boolean start="true" fixed="true" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.use_externalQ"
+    valueReference = "1252"
+    description = "Use external heat flow if True"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "8" classType = "bPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "19" startColumn = "3" endLine = "20" endColumn = "37" fileWritable = "true">
+    <Boolean start="false" fixed="true" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "HTM.X1.use_internalQ"
+    valueReference = "1253"
+    description = "Use internal heat flow if True"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "9" classType = "bPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/Users/maggie/Documents/AREN-5010-HVAC-Modeling-and-Control/Modeling/OpenModelica/rcnetworks-master/RCNetworks/RCElements/Layer.mo" startLine = "21" startColumn = "3" endLine = "22" endColumn = "37" fileWritable = "true">
+    <Boolean start="false" fixed="true" />
+  </ScalarVariable>
+
+
+
+  </ModelVariables>
+
+
+</fmiModelDescription>
+
